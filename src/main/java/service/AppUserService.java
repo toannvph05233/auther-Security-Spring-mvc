@@ -18,7 +18,6 @@ public class AppUserService implements UserDetailsService {
     @Autowired
     IUserRepo iUserRepo;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser user = this.iUserRepo.findByUsername(username);

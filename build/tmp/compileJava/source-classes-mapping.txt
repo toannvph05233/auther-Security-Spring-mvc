@@ -1,18 +1,18 @@
 model/AppRole.java
  model.AppRole
-security/SecurityInit.java
- security.SecurityInit
+repository/IUserRepo.java
+ repository.IUserRepo
 model/AppUser.java
  model.AppUser
 controller/AuthController.java
  controller.AuthController
-service/AppUserService.java
- service.AppUserService
-repository/IUserRepo.java
- repository.IUserRepo
-security/SecurityConfig.java
- security.SecurityConfig
-AppConfig.java
- AppConfig
 WebConfig.java
  WebConfig
+security/SecurityConfig.java
+ security.SecurityConfig
+service/AppUserService.java
+ service.AppUserService
+AppConfig.java
+ AppConfig
+security/SecurityInit.java
+ security.SecurityInit

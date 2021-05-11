@@ -10,13 +10,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import repository.IUserRepo;
 import service.AppUserService;
 
 @EnableWebSecurity
-@Configuration
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     AppUserService appUserService;
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -24,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            .withUser("user").password("{noop}123").roles("USER")
 //            .and()
 //            .withUser("admin").password("{noop}123456").roles("ADMIN");
+
         auth.userDetailsService((UserDetailsService) appUserService).passwordEncoder(NoOpPasswordEncoder.getInstance());
 
     }
@@ -39,10 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
-    @Bean
-    public AppUserService appUserService() {
-        return new AppUserService();
-    }
+
 
 
 }

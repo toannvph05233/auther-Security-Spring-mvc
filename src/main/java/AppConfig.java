@@ -8,12 +8,12 @@ import javax.servlet.Filter;
 public class AppConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{SecurityConfig.class};
+        return new Class[]{WebConfig.class,SecurityConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{WebConfig.class};
+        return new Class[]{};
     }
 
     @Override
